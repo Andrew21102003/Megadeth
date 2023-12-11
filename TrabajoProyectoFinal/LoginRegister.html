@@ -1,0 +1,294 @@
+<html>
+
+</html>
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content=" width=device-width initial-scale=1.0" >
+ <title>Login/Register</title>
+
+</head>
+
+<style>
+    *{margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+    body{background-image: url(Imagenes/Megadeth7.gif);
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-attachment: fixed;
+        }
+    main{width: 100%;
+         padding: 20px;
+         margin: auto;
+         margin-top: 100px;
+        }
+    .Contenedor{width: 100%;       /* se pone . y el nombre cuando es clase asi que se lo puede seleccioonar asi */
+                max-width: 800px;
+                margin: auto;
+                position: relative;
+                }
+    .cajaTrasera{
+        width: 100%;
+        padding: 10px 80px;
+        display: flex;
+        justify-content: center;
+        backdrop-filter: blur(10px);   /* sirve para desenfocar el blur y esto es un filtro*/
+        background-color: rgba(0, 128, 255, 0.5);
+    }            
+    .cajaTrasera div{
+        margin: 100px 40px;     /* el priemer parametro alto y el segundo ancho*/
+        color: white;
+        transition: all 500ms;
+    }
+    .cajaTrasera div p,
+    .cajaTrasera div button{
+        margin-top: 30px;
+    }
+    .cajaTrasera div h3{
+        font-weight: 400;
+        font-size: 26px;
+    }
+    .cajaTrasera button{
+        padding: 10px 40px;
+        border: 2px solid white;
+        background: transparent;
+        font-size: 14;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+        transition: all 300ms;        
+    }
+    .cajaTrasera button:hover{ /* se lo conoce como pseudocodigo y el hover es la interracion con el cursor encima*/
+        background: white;
+        color: blue;
+    }
+    /*Formularios*/
+    .ContenedorLoginRegister{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 380px;
+        position: relative;
+        top: -185px;
+        left: 10px;
+        transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* la animacion para la transition ya copiada obviamente*/
+    }
+
+    .ContenedorLoginRegister form{
+        width: 100%;
+        padding: 80px 20px;
+        background: white;
+        position: absolute;
+        border-radius: 30px;
+    }
+    .ContenedorLoginRegister form h2{
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: blue;
+    }
+    .ContenedorLoginRegister form input{
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        background: #F2F2F2;
+        font-size: 16PX;
+        outline: none;
+    }
+
+    .ContenedorLoginRegister form button{
+        padding: 10px 40px;
+        margin-top: 40px;
+        border: none;
+        font-size: 14px;
+        background: rgb(82, 82, 241);
+        cursor: pointer;
+        outline: none;
+        
+    }
+
+    .FormularioLogin{
+        opacity: 1;
+        display: block;
+    }
+    .FormularioRegister{
+        display: none;
+    }
+
+    /*Responsive design osea cuando se pone aprueba la pagina desde cel o minimizando*/
+    @media screen and (max-width: 850px){
+        main{
+            margin-top: 50px;
+        }
+        .cajaTrasera{
+            max-width: 350px;
+            height: 300px;
+            flex-direction: column;
+            margin: auto;
+        }
+        .cajaTrasera div{
+            margin: 0px;
+            position: absolute;
+        }
+        /* Responsive design forms*/
+        .ContenedorLoginRegister{
+            top: -10px;
+            left: -5px;
+            margin: auto;
+        }
+        .ContenedorLoginRegister form{
+            position: relative;
+        }
+    } 
+    
+
+        
+    
+
+</style>
+
+<body>
+
+    <main>
+        <div class="Contenedor">
+            <div class="cajaTrasera">
+                <div class="cajaLogin">
+                    <h3>Ya tienes una cuenta?</h3>
+                    <p>Inicia sesion para entrar a la pagina</p>
+                    <button  id="BtnIniciarS">Iniciar Sesion</button>
+                </div>
+    
+                <div class="cajaRegister">
+                    <h3>Aun no tienes una cuenta?</h3>
+                    <p>Registrare para poder acceder a nuestra pagina :D</p>
+                    <button id="BtnRegistrarse">Registrarse</button>
+                </div>
+            </div>
+    
+            <div class="ContenedorLoginRegister">
+                <form action="" class="FormularioLogin">
+    
+                    <h2>Iniciar Sesion</h2>
+                    <input id="cuenta" type="text" placeholder="Correo Electronico"> <!--para la condicional de if para el ingreso-->
+                    <input id="clave" type="password" placeholder="Contraseña">
+                    <button id="prueba"><a style="color: black;" href="#">Ingresar</a></button>
+    
+                </form>
+                <form action="" class="FormularioRegister">
+                    <h2>Registrarse</h2>
+                    <input type="text" placeholder="Nombre">
+                    <input type="text" placeholder="Apellido">
+                    <input type="text" placeholder="Correo Electronico">
+                    <input type="password" placeholder="Contraseña">
+                    <button>Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--Codigo javaScript y quizas lo de separarlo en archivos no sea tan mala idea como me lo recomendo freddy xD-->
+     <script>
+        //eventos
+        document.getElementById("BtnRegistrarse").addEventListener("click", Register);
+        document.getElementById("BtnIniciarS").addEventListener("click", IniciarSesion);
+        document.getElementById("prueba").addEventListener("click", verificarCuenta);
+        document.getElementById("cuenta").addEventListener("click", prueba);
+        document.getElementById("clave").addEventListener("click", prueba);
+
+        
+        window.addEventListener("resize",anchoPagina);
+
+        //Declaracion Variables
+        var Contenedor_Login_Register = document.querySelector(".ContenedorLoginRegister");
+        var Formulario_Login = document.querySelector(".FormularioLogin");
+        var Formulario_Register = document.querySelector(".FormularioRegister");
+        var Caja_Login = document.querySelector(".cajaLogin");
+        var Caja_Register = document.querySelector(".cajaRegister");
+
+
+
+
+        function verificarCuenta() {
+
+        var cuenta = document.getElementById("cuenta").value;
+        var clave = document.getElementById("clave").value;
+
+        // Verificacion
+        if (cuenta === "Megadeth@gmail.com" && clave === "12345") {
+            window.location.href = "PaginaHome.html";
+        } else {
+            // Si no coinciden, puedes mostrar un mensaje de error o realizar otras acciones
+            alert("Cuenta o clave incorrecta. Inténtalo de nuevo.");
+        }
+    }
+
+
+
+        function Register()
+        {
+            if(window.innerWidth > 850)
+            {
+                Formulario_Register.style.display = "block";
+                Contenedor_Login_Register.style.left = "410px";
+                Formulario_Login.style.display = "none";
+                Caja_Register.style.opacity = "0";
+                Caja_Login.style.opacity = "1";
+            }
+            
+            else
+            {
+                Formulario_Register.style.display = "block";
+                Contenedor_Login_Register.style.left = "0px";
+                Formulario_Login.style.display = "none";
+                Caja_Register.style.display = "none";
+                Caja_Login.style.display = "block";
+                Caja_Login.style.opacity = "0";
+            }
+
+        }
+
+        function IniciarSesion()
+        {
+            if(window.innerWidth > 850)
+            {
+                Formulario_Register.style.display = "none";
+                Contenedor_Login_Register.style.left = "10px";
+                Formulario_Login.style.display = "block ";
+                Caja_Register.style.opacity = "1";
+                Caja_Login.style.opacity = "0";
+            }
+            else
+            {
+                Formulario_Register.style.display = "none";
+                Contenedor_Login_Register.style.left = "0px";
+                Formulario_Login.style.display = "block ";
+                Caja_Register.style.display = "block";
+                Caja_Login.style.display = "none";
+            }
+             
+        }
+        function anchoPagina() //controlador del ancho de pagina mas que todo pa movil
+        {
+            if(window.innerWidth > 850)
+            {
+                Caja_Login.style.display = "block";
+                Caja_Register.style.display = "block";
+            }
+            else
+            {   
+                Caja_Register.style.display = "block";
+                Caja_Register.style.opacity = "1";
+                Caja_Login.style.opacity = "none";
+                Formulario_Login.style.display = "block";
+                Formulario_Register.style.display = "none";
+                Contenedor_Login_Register.style.left = "0px";
+            }
+        }
+        anchoPagina(); //arregla el bug
+     </script>   
+</body>

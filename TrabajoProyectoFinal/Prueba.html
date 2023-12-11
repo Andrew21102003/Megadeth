@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaginaHome</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    body{
+        text-align: center;
+        font-family: sans-serif;
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header{
+        height: 60vh !important; 
+        background: url(Imagenes/fondoA1.jpg);
+        background-size: cover;
+        backdrop-filter: blur(10px);
+    }
+    .head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 63px;
+        background-image: url(Imagenes/madera2.png);
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+    }
+    .navbar{
+        display: flex;
+        margin-right: 10px;
+    }
+
+    .navbar a{
+        display: block;
+        padding: 23px 20px;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    .navbar a:hover{
+        background: #3f3f3f;
+    }
+
+    .logo{
+        margin-left: 30px;
+    }
+    .logo a{
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    .title{
+        margin-bottom: 40px;
+        font-size: 60px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    p{
+        margin-bottom: 40px;
+        font-size: 18px;
+        color: #fff;
+    }
+    .btn{
+        display: inline-block;
+        margin-top: 15px; 
+        padding: 10px 40px;
+        border: 2px solid #9c27b0;
+        color: white;
+        text-decoration: none;
+        background-color: #9c27b0;
+    }
+    .btn-home{
+        display: flex;
+    }
+    .btn-home a{
+        margin: 0 10px;
+    }
+    .btn:hover{
+        background: none;
+    }
+    .content{
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+
+
+    img {height: 200px; width: 200px;}
+</style>
+
+<body>  <!--minuto 30 !important-->
+    <div class="head">
+        <div class="logo">
+            <a href="bloque.webp"></a>
+        </div>
+
+        <nav class="navbar">
+            <a href="#">Inicio</a>
+            <a href="#">Acerca De</a>
+            <a href="#">Descarga</a>
+            <a href="#">Ayuda</a>
+        </nav>
+
+    </div>
+    <header class="content header">
+        <h2 class="title">Inicio</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Dolore reiciendis, dicta odit debitis expedita delectus veniam facilis error, rem optio voluptatem.
+             Ut alias expedita suscipit, a mollitia dicta. Et, voluptate?
+        </p>
+        <div class="btn-home">
+            <a href="#" class="btn">Saber mas</a>
+            <a href="#" class="btn">Saber mas</a>
+        </div>
+    </header>
+
+    <section class="content sau">
+        <h2 class="title">Que es Megadeth?</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur 
+            adipisicing elit. Sapiente molestiae iure, sunt voluptate vel quae neque earum! Quasi possimus, natus assumenda sequi
+             perferendis dolores debitis ab nam cum et odit.
+        </p>
+        <div class="box-container">
+            <div class="box">
+                <img src="Imagenes/Megadeth1.png" alt="imagen">  <!--Codigo de las imagenes que usare pa las fotos luego-->
+                <p>voluptate vel quae neque earum! </p>
+            </div>
+
+            <div class="box">
+                <img src="Imagenes/Megadeth2.png" alt="imagen">  <!--Codigo de las imagenes que usare pa las fotos luego-->
+                <p>voluptate vel quae neque earum! </p>
+            </div>
+
+            <div class="box">
+                <img src="Imagenes/Megadeth3.png" alt="imagen">  <!--Codigo de las imagenes que usare pa las fotos luego-->
+                <p>voluptate vel quae neque earum! </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="content about">
+        <h2 class="title">Nosotros</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam h
+            ic, nemo voluptates, amet, perferendis dicta consectetur magnam omnis est consequatur consequuntur debitis nulla odit
+             unde voluptas sed quaerat veniam optio!
+        </p>
+        <a href="#" class="btn">Saber Mas</a>
+    </section>
+    <section class="content ayuda">
+        <article class="content">
+            <h2 class="title">Ayuda</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam h
+                ic, nemo voluptates, amet, perferendis dicta consectetur magnam omnis est consequatur consequuntur debitis nulla odit
+                 unde voluptas sed quaerat veniam optio!
+            </p>
+            <a href="#" class="btn">Saber Mas</a>
+        </article>
+    </section>
+    <footer class="footer">
+        <p style="color: white;">Andres Reyes-Ortiz/Roger Mateo/Fernando Daza/Frederick Pizza - @ 2023 Gestion De Aserraderos Megadeth </p>
+    </footer>
+
+</body>
+</html>
